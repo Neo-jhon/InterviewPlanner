@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+Backend/.env
+Frontend/.env
+
+# Build folders
+dist/
+build/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Vite
+.vite/
+
+# Coverage
+coverage/
