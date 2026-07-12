@@ -1,0 +1,249 @@
+$bg-primary: #0d1117;
+$bg-card: #161b22;
+$border-subtle: rgba(255, 255, 255, 0.08);
+$text-primary: #ffffff;
+$text-muted: #8b949e;
+$accent: #ff4d6d;
+
+.interview {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  background: radial-gradient(ellipse at top, #1a1f2e 0%, $bg-primary 60%);
+
+  &__container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__title {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 600;
+    color: $text-primary;
+    text-align: center;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 220px 1fr 220px;
+    min-height: 520px;
+    background: $bg-card;
+    border: 1px solid $border-subtle;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.25rem;
+    border-right: 1px solid $border-subtle;
+    gap: 0.5rem;
+
+    @media (max-width: 900px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      border-right: none;
+      border-bottom: 1px solid $border-subtle;
+    }
+  }
+
+  &__nav-item {
+    padding: 0.75rem 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: $text-muted;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+
+    &:hover {
+      color: $text-primary;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    &--active {
+      color: $text-primary;
+      background: rgba(255, 77, 109, 0.1);
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2.5rem;
+    overflow-y: auto;
+
+    @media (max-width: 900px) {
+      padding: 1.5rem;
+      min-height: 320px;
+    }
+  }
+
+  &__placeholder {
+    margin: auto;
+    font-size: 0.95rem;
+    color: $text-muted;
+    text-align: center;
+
+    &--error {
+      color: $accent;
+    }
+  }
+
+  &__questions {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__question {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $border-subtle;
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  &__question-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  &__question-intention,
+  &__question-answer {
+    font-size: 0.875rem;
+    color: $text-muted;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+
+    span {
+      color: $text-primary;
+      font-weight: 500;
+    }
+  }
+
+  &__roadmap {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__roadmap-item {
+    padding: 1rem 1.25rem;
+    border: 1px solid $border-subtle;
+    border-radius: 0.625rem;
+    background: rgba(13, 17, 23, 0.5);
+  }
+
+  &__roadmap-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__roadmap-day {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: $accent;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__roadmap-focus {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $text-primary;
+  }
+
+  &__roadmap-tasks {
+    list-style: disc;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+
+    li {
+      font-size: 0.875rem;
+      color: $text-muted;
+      line-height: 1.5;
+    }
+  }
+
+  &__gaps {
+    padding: 1.5rem 1.25rem;
+    border-left: 1px solid $border-subtle;
+
+    @media (max-width: 900px) {
+      border-left: none;
+      border-top: 1px solid $border-subtle;
+    }
+  }
+
+  &__gaps-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: 1rem;
+  }
+
+  &__gaps-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__gaps-empty {
+    font-size: 0.8rem;
+    color: $text-muted;
+    line-height: 1.5;
+  }
+
+  &__tag {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid $border-subtle;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    color: $text-primary;
+    background: rgba(255, 255, 255, 0.04);
+
+    &--low {
+      border-color: rgba(139, 148, 158, 0.4);
+    }
+
+    &--medium {
+      border-color: rgba(255, 193, 7, 0.4);
+      color: #ffc107;
+    }
+
+    &--high {
+      border-color: rgba(255, 77, 109, 0.5);
+      color: $accent;
+    }
+  }
+}
